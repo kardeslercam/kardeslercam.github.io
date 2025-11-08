@@ -4,7 +4,7 @@
   --ana: #0072ff;
   --yan: #00c6ff;
   --arka: #0a0a0a;
-  --beyaz: #ffffff; /* bilgi metinleri için tam beyaz */
+  --beyaz: #ffffff;
   --cam: rgba(255, 255, 255, 0.1);
 }
 
@@ -62,35 +62,36 @@ h1 {
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-/* Hover efektini koru */
 .content:hover {
   transform: translateY(-5px);
   box-shadow: 0 0 60px rgba(0, 198, 255, 0.4);
 }
 
-/* Bilgi metinlerini tamamen beyaz yap */
+p {
+  font-size: 1.2rem;
+  margin: 15px 0;
+  color: var(--beyaz);
+}
+
+/* --- Buradan itibaren düzeltmeler --- */
+
+/* Tüm içerik kısmındaki metinleri beyaz yap */
 .content p,
-.content strong,
+.content a,
+.content strong {
+  color: #ffffff !important;
+  text-shadow: none;
+}
+
+/* Linkler beyaz, hover'da hafif parlayan efekt */
 .content a {
-  color: var(--beyaz);
-}
-
-/* Güçlü vurgular da beyaz olsun (şeffaf glow korunuyor) */
-strong {
-  color: var(--beyaz);
-  text-shadow: 0 0 10px rgba(0, 198, 255, 0.15);
-}
-
-/* Link görünüşü: normalde beyaz, hover'da kontrastlı vurgulama */
-a {
-  color: var(--beyaz);
   font-weight: 600;
   text-decoration: none;
   position: relative;
-  transition: color 0.3s ease;
+  transition: color 0.3s ease, text-shadow 0.3s ease;
 }
 
-a::after {
+.content a::after {
   content: "";
   position: absolute;
   width: 0%;
@@ -101,19 +102,16 @@ a::after {
   transition: width 0.3s ease;
 }
 
-a:hover {
-  color: var(--beyaz);
+.content a:hover {
+  color: #ffffff;
+  text-shadow: 0 0 8px rgba(0, 198, 255, 0.5);
 }
 
-a:hover::after {
+.content a:hover::after {
   width: 100%;
 }
 
-p {
-  font-size: 1.2rem;
-  margin: 15px 0;
-  color: var(--beyaz); /* ekstra garanti */
-}
+/* --- Son --- */
 
 footer {
   width: 100%;
