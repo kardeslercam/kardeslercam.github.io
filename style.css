@@ -4,7 +4,7 @@
   --ana: #0072ff;
   --yan: #00c6ff;
   --arka: #0a0a0a;
-  --beyaz: #f1f1f1;
+  --beyaz: #ffffff; /* bilgi metinleri için tam beyaz */
   --cam: rgba(255, 255, 255, 0.1);
 }
 
@@ -62,24 +62,28 @@ h1 {
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
+/* Hover efektini koru */
 .content:hover {
   transform: translateY(-5px);
   box-shadow: 0 0 60px rgba(0, 198, 255, 0.4);
 }
 
-p {
-  font-size: 1.2rem;
-  margin: 15px 0;
+/* Bilgi metinlerini tamamen beyaz yap */
+.content p,
+.content strong,
+.content a {
   color: var(--beyaz);
 }
 
+/* Güçlü vurgular da beyaz olsun (şeffaf glow korunuyor) */
 strong {
-  color: var(--yan);
-  text-shadow: 0 0 10px rgba(0, 198, 255, 0.4);
+  color: var(--beyaz);
+  text-shadow: 0 0 10px rgba(0, 198, 255, 0.15);
 }
 
+/* Link görünüşü: normalde beyaz, hover'da kontrastlı vurgulama */
 a {
-  color: var(--yan);
+  color: var(--beyaz);
   font-weight: 600;
   text-decoration: none;
   position: relative;
@@ -103,6 +107,12 @@ a:hover {
 
 a:hover::after {
   width: 100%;
+}
+
+p {
+  font-size: 1.2rem;
+  margin: 15px 0;
+  color: var(--beyaz); /* ekstra garanti */
 }
 
 footer {
