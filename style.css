@@ -1,0 +1,124 @@
+/* ===== Kardeşler Cam - Estetik + Güç ===== */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap');
+
+:root {
+  --ana: #0072ff;
+  --yan: #00c6ff;
+  --arka: #0a0a0a;
+  --beyaz: #f1f1f1;
+  --cam: rgba(255, 255, 255, 0.1);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background: radial-gradient(circle at top left, var(--ana), var(--yan), #001a33);
+  color: var(--beyaz);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  overflow-x: hidden;
+}
+
+header {
+  width: 100%;
+  text-align: center;
+  padding: 40px 0;
+  backdrop-filter: blur(10px);
+  background: linear-gradient(135deg, var(--cam), rgba(255,255,255,0.05));
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 0 40px rgba(0, 198, 255, 0.3);
+}
+
+h1 {
+  font-size: 3rem;
+  letter-spacing: 2px;
+  color: var(--beyaz);
+  text-shadow: 0 0 10px var(--yan), 0 0 20px var(--ana);
+  animation: parlamaci 4s infinite alternate;
+}
+
+@keyframes parlamaci {
+  from { text-shadow: 0 0 10px var(--ana); }
+  to { text-shadow: 0 0 25px var(--yan), 0 0 50px var(--ana); }
+}
+
+.content {
+  background: var(--cam);
+  backdrop-filter: blur(20px);
+  padding: 40px;
+  margin: 40px 20px;
+  border-radius: 20px;
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.4);
+  text-align: center;
+  max-width: 700px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.content:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 0 60px rgba(0, 198, 255, 0.4);
+}
+
+p {
+  font-size: 1.2rem;
+  margin: 15px 0;
+  color: var(--beyaz);
+}
+
+strong {
+  color: var(--yan);
+  text-shadow: 0 0 10px rgba(0, 198, 255, 0.4);
+}
+
+a {
+  color: var(--yan);
+  font-weight: 600;
+  text-decoration: none;
+  position: relative;
+  transition: color 0.3s ease;
+}
+
+a::after {
+  content: "";
+  position: absolute;
+  width: 0%;
+  height: 2px;
+  left: 0;
+  bottom: -3px;
+  background: linear-gradient(90deg, var(--ana), var(--yan));
+  transition: width 0.3s ease;
+}
+
+a:hover {
+  color: var(--beyaz);
+}
+
+a:hover::after {
+  width: 100%;
+}
+
+footer {
+  width: 100%;
+  text-align: center;
+  padding: 20px 0;
+  background: linear-gradient(135deg, var(--cam), rgba(255,255,255,0.05));
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
+  font-size: 0.9rem;
+  color: rgba(255,255,255,0.7);
+  backdrop-filter: blur(8px);
+  margin-top: auto;
+}
+
+footer:hover {
+  color: var(--beyaz);
+  text-shadow: 0 0 10px var(--yan);
+}
